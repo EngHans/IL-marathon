@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "wea-game"
+version = "0.1.0"
+description = ""
+authors = ["Jonathan"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.12"
+pygame = "^2.6.1"
+black = "^24.10.0"
+pillow = "^11.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+
+[tool.poe.tasks]
+run = "poetry run python .src/main.py"
+lint = "pylint '**/*.py'"
+prettier = "black ."
+type-checker = "mypy"
+fix-lint = ["type-checker", "prettier", "lint"]

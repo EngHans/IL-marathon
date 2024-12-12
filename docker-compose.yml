@@ -1,0 +1,8 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: instaleap/game
+    container_name: instaleap-game
+    command: poetry run python main.py
