@@ -375,13 +375,16 @@ def main():
         clock.tick(FPS)
 
 
-im1 = Image.open(f"{p1_folder}/img.jpg")
-im1 = im1.resize((200, 200))
-im1.show("Player-1")
+try:
+    im1 = Image.open(f"{p1_folder}/img.jpg")
+    im1 = im1.resize((200, 200))
+    im1.show("Player-1")
 
-im2 = Image.open(f"{p2_folder}/img.jpg")
-im2 = im2.resize((200, 200))
-im2.show("Player-2")
+    im2 = Image.open(f"{p2_folder}/img.jpg")
+    im2 = im2.resize((200, 200))
+    im2.show("Player-2")
+except:
+    pass
 
 if __name__ == "__main__":
     main()
